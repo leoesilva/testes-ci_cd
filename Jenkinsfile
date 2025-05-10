@@ -1,9 +1,9 @@
-node {
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-}
-
 pipeline {
     agent any
+
+    environment {
+        PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
+    }
 
     stages {
         stage('Instalar dependências') {
